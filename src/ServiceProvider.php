@@ -5,7 +5,7 @@ namespace NotificationChannels\Phoney;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 /**
- * @see
+ * @see https://github.com/laravel-notification-channels/twilio/tree/master/src
  */
 class ServiceProvider extends BaseServiceProvider
 {
