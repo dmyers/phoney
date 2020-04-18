@@ -13,6 +13,12 @@ class PhoneyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->app->singleton(Phoney::class, function () {
+            return new Phoney;
+        });
+
+        $this->app->alias(Phoney::class, 'phoney');
+
         /*
         $this->app->when(Channel::class)
             ->needs(Pusher::class)
