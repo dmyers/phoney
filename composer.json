@@ -1,0 +1,35 @@
+{
+    "name": "dmyers/phoney",
+    "description": "Free SMS notification channel for Laravel.",
+    "keywords": ["laravel", "notifications", "sms gateway", "email2sms", "email to sms", "send free sms", "send sms"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Derek Myers",
+            "email": "arcticpro@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "illuminate/console": "~5.7.0|~5.8.0|^6.0|^7.0",
+        "illuminate/contracts": "~5.7.0|~5.8.0|^6.0|^7.0",
+        "illuminate/notifications": "~5.7.0|~5.8.0|^6.0|^7.0",
+        "illuminate/support": "~5.7.0|~5.8.0|^6.0|^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dmyers\\Phoney\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dmyers\\Phoney\\ServiceProvider"
+            ],
+            "aliases": {
+                "Phoney": "Dmyers\\Phoney\\Facade"
+            }
+        }
+    },
+    "minimum-stability": "dev"
+}
