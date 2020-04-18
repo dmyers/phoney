@@ -4,6 +4,9 @@ namespace NotificationChannels\Phoney;
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * @see
+ */
 class PhoneyServiceProvider extends ServiceProvider
 {
     /**
