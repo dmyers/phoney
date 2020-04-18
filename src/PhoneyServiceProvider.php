@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 class PhoneyServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap the package services.
+     * Bootstrap any package services.
      *
      * @return void
      */
