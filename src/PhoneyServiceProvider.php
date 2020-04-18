@@ -35,7 +35,7 @@ class PhoneyServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register the package services.
+     * Register any package services.
      *
      * @return void
      */
