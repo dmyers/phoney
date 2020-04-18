@@ -2,12 +2,12 @@
 
 namespace NotificationChannels\Phoney;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 /**
  * @see
  */
-class PhoneyServiceProvider extends ServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
     /**
      * Bootstrap any package services.
