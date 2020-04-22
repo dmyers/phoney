@@ -131,6 +131,17 @@ class Phoney
         return str_replace('number', $phoneNumber, $gateway);
     }
 
+    /**
+     * Sends a message to a phone number using
+     * the gateway for a carrier.
+     *
+     * @param  string  $phoneNumber
+     * @param  string  $body
+     * @param  string  $country
+     * @param  string  $carrier
+     * @param  string|null  $region
+     * @return mixed
+     */
     public function sendMessage(string $phoneNumber, string $body, string $carrier, string $country, ?string $region = null)
     {
         $email = $this->formatAddress($phoneNumber, $carrier, $country, $region);
