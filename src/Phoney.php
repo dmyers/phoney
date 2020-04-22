@@ -16,7 +16,7 @@ class Phoney
 
     public function loadFromCache()
     {
-
+        //
     }
 
     public function loadFromFile()
