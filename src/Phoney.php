@@ -133,9 +133,11 @@ class Phoney
     public function sendMessage(string $phoneNumber, string $body, string $carrier, string $country, ?string $region = null)
     {
         $email = $this->formatAddress($phoneNumber, $carrier, $country, $region);
+        $subject = config('app.name');
 
-        return Mail::raw($body, function ($msg) use ($email) {
+        return Mail::raw($body, function ($msg) use ($email, $subject) {
             $msg->to($email);
+            $msg->subject($subject);
         });
     }
 }
