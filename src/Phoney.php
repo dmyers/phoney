@@ -136,16 +136,16 @@ class Phoney
      * the gateway for a carrier.
      *
      * @param  string  $phoneNumber
+     * @param  string  $subject
      * @param  string  $body
      * @param  string  $country
      * @param  string  $carrier
      * @param  string|null  $region
      * @return mixed
      */
-    public function sendMessage(string $phoneNumber, string $body, string $carrier, string $country, ?string $region = null)
+    public function sendMessage(string $phoneNumber, string $subject, string $body, string $carrier, string $country, ?string $region = null)
     {
         $email = $this->formatAddress($phoneNumber, $carrier, $country, $region);
-        $subject = config('app.name');
 
         return Mail::raw($body, function ($msg) use ($email, $subject) {
             $msg->to($email);

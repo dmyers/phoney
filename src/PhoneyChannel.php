@@ -39,6 +39,6 @@ class PhoneyChannel
         $country = array_get($data, 'country');
         $message = $notification->toPhoney($notifiable);
 
-        return $this->phoney->sendMessage($phoneNumber, $message->body, $carrier, $country);
+        return $this->phoney->sendMessage($phoneNumber, $message->subject, $message->body, $carrier, $country);
     }
 }
