@@ -9,7 +9,7 @@ class PhoneyChannel
 {
     public function __construct()
     {
-        // Initialisation code here
+        //
     }
 
     /**
