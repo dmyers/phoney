@@ -137,7 +137,5 @@ class Phoney
         return Mail::raw($body, function ($msg) use ($email) {
             $msg->to($email);
         });
-
-        // return Mail::send(new PhoneyMailable($email, $body));
     }
 }
