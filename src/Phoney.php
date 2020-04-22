@@ -80,7 +80,7 @@ class Phoney
     /**
      * Get the gateways for a carrier.
      *
-     * @param  string|null  $country
+     * @param  string  $country
      * @return Collection
      */
     public function gateways(string $carrier, string $country)
@@ -97,7 +97,7 @@ class Phoney
     /**
      * Get the text gateway for a carrier.
      *
-     * @param  string|null  $country
+     * @param  string  $country
      * @return Collection
      */
     public function gateway(string $carrier, string $country)
