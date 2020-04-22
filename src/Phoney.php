@@ -11,6 +11,11 @@ class Phoney
 
     public function __construct()
     {
+        $this->loadData();
+    }
+
+    public function loadData()
+    {
         $this->loadFromFile();
     }
 
