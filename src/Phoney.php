@@ -43,7 +43,7 @@ class Phoney
      * @param  string|null  $name
      * @return Collection
      */
-    public function carriers(?string $country = null, ?string $region = null, ?string $name = null)
+    public function carriers(?string $country = null, ?string $region = null, ?string $name = null, ?string $slug = null)
     {
         $data = $this->data->map(function ($item) {
             $item['slug'] = str_slug($item['carrier']);
@@ -63,6 +63,11 @@ class Phoney
         if (!empty($name)) {
             $data = $data->filter(function ($item) use ($name) {
                 return $item['carrier'] == $name;
+            });
+        }
+        if (!empty($slug)) {
+            $data = $data->filter(function ($item) use ($slug) {
+                return $item['slug'] == $slug;
             });
         }
 
@@ -91,7 +96,7 @@ class Phoney
      */
     public function gateways(string $carrier, string $country, ?string $region = null)
     {
-        $carriers = $this->carriers($country, $region, $carrier);
+        $carriers = $this->carriers($country, $region, null, $carrier);
         $carrier = $carriers->first();
 
         return [
