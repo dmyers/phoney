@@ -7,9 +7,17 @@ use Illuminate\Notifications\Notification;
 
 class PhoneyChannel
 {
-    public function __construct()
+    /**
+     * @var \Dmyers\Phoney\Phoney
+     */
+    protected $phoney;
+
+    /**
+     * @param \Dmyers\Phoney\Phoney $phoney
+     */
+    public function __construct(Phoney $phoney)
     {
-        //
+        $this->phoney = $phoney;
     }
 
     /**
@@ -17,14 +25,19 @@ class PhoneyChannel
      *
      * @param  mixed  $notifiable
      * @param  \Illuminate\Notifications\Notification  $notification
+     * @return array
      * @throws \Exception
      */
     public function send($notifiable, Notification $notification)
     {
-        //$response = [a call to the api of your notification send]
+        if (! $phoneNumber = $notifiable->routeNotificationFor('phoney')) {
+            return;
+        }
 
-//        if ($response->error) {
-//            throw Exception::serviceRespondedWithAnError($response);
-//        }
+        $message = $notification->toPhoney($notifiable);
+
+        return $this->phoney->send($phoneNumber, [
+            'content' => $message->body,
+        ]);
     }
 }
