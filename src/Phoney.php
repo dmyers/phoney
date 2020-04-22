@@ -45,7 +45,10 @@ class Phoney
      */
     public function carriers(?string $country = null, ?string $region = null, ?string $name = null)
     {
-        $data = $this->data;
+        $data = $this->data->map(function ($item) {
+            $item['slug'] = str_slug($item['carrier']);
+            return $item;
+        });
 
         if (!empty($country)) {
             $data = $data->filter(function ($item) use ($country) {
