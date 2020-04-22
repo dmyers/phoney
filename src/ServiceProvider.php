@@ -7,8 +7,8 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 /**
  * @see https://raw.githubusercontent.com/typpo/textbelt/master/lib/carriers.js
  * @see https://raw.githubusercontent.com/typpo/textbelt/master/lib/providers.js
- * @see https://github.com/laravel-notification-channels/twilio/tree/master/src
  * @see https://github.com/mfitzp/List_of_SMS_gateways
+ * @see https://github.com/laravel-notification-channels/twilio/tree/master/src
  */
 class ServiceProvider extends BaseServiceProvider
 {
