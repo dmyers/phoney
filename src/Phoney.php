@@ -109,4 +109,19 @@ class Phoney
         $gateways = $this->gateways($carrier, $country, $region);
         return array_get($gateways, 'sms');
     }
+
+    /**
+     * Formats a phone number to be used with
+     * the text gateway for a carrier.
+     *
+     * @param  string  $country
+     * @param  string  $carrier
+     * @param  string|null  $region
+     * @return Collection
+     */
+    public function formatAddress(string $phoneNumber, string $carrier, string $country, ?string $region = null)
+    {
+        $gateway = $this->gateway($carrier, $country, $region);
+        return str_replace('number', $phoneNumber, $gateway);
+    }
 }
