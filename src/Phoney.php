@@ -83,7 +83,7 @@ class Phoney
      */
     public function carrierNames(?string $country = null, ?string $region = null)
     {
-        return $this->carriers($country, $region)->pluck('carrier')->sort()->values();
+        return $this->carriers($country, $region)->pluck('carrier', 'slug');
     }
 
     /**
