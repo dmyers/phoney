@@ -119,6 +119,7 @@ class Phoney
      * Formats a phone number to be used with
      * the text gateway for a carrier.
      *
+     * @param  string  $phoneNumber
      * @param  string  $country
      * @param  string  $carrier
      * @param  string|null  $region
