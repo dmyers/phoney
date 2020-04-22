@@ -30,14 +30,15 @@ class PhoneyChannel
      */
     public function send($notifiable, Notification $notification)
     {
-        if (! $phoneNumber = $notifiable->routeNotificationFor('phoney')) {
+        if (!$data = $notifiable->routeNotificationFor('phoney')) {
             return;
         }
 
+        $phoneNumber = array_get($data, 'phone');
+        $carrier = array_get($data, 'carrier');
+        $country = array_get($data, 'country');
         $message = $notification->toPhoney($notifiable);
 
-        return $this->phoney->send($phoneNumber, [
-            'content' => $message->body,
-        ]);
+        return $this->phoney->sendMessage($phoneNumber, $message->body, $carrier, $country);
     }
 }
