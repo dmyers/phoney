@@ -107,7 +107,11 @@ class Phoney
     public function gateway(string $carrier, string $country, ?string $region = null)
     {
         $gateways = $this->gateways($carrier, $country, $region);
-        return array_get($gateways, 'sms');
+        $sms = array_get($gateways, 'sms');
+        if (!empty($sms)) return $sms;
+        $mms = array_get($gateways, 'mms');
+        if (!empty($mms)) return $mms;
+        return null;
     }
 
     /**
