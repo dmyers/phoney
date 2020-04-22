@@ -14,7 +14,8 @@
         "illuminate/console": "~5.7.0|~5.8.0|^6.0|^7.0",
         "illuminate/contracts": "~5.7.0|~5.8.0|^6.0|^7.0",
         "illuminate/notifications": "~5.7.0|~5.8.0|^6.0|^7.0",
-        "illuminate/support": "~5.7.0|~5.8.0|^6.0|^7.0"
+        "illuminate/support": "~5.7.0|~5.8.0|^6.0|^7.0",
+        "giggsey/libphonenumber-for-php": "^8.0@dev"
     },
     "autoload": {
         "psr-4": {
