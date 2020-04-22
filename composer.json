@@ -22,6 +22,9 @@
             "Dmyers\\Phoney\\": "src"
         }
     },
+    "config": {
+        "sort-packages": true
+    },
     "extra": {
         "laravel": {
             "providers": [
