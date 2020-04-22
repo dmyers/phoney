@@ -3,6 +3,7 @@
 namespace Dmyers\Phoney;
 
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Mail;
 
 class Phoney
 {
@@ -127,5 +128,16 @@ class Phoney
     {
         $gateway = $this->gateway($carrier, $country, $region);
         return str_replace('number', $phoneNumber, $gateway);
+    }
+
+    public function sendMessage(string $phoneNumber, string $body, string $carrier, string $country, ?string $region = null)
+    {
+        $email = $this->formatAddress($phoneNumber, $carrier, $country, $region);
+
+        return Mail::raw($body, function ($msg) use ($email) {
+            $msg->to($email);
+        });
+
+        // return Mail::send(new PhoneyMailable($email, $body));
     }
 }
