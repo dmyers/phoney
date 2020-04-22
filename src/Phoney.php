@@ -2,8 +2,11 @@
 
 namespace Dmyers\Phoney;
 
+use Illuminate\Support\Collection;
+
 class Phoney
 {
+    /** @var Collection */
     protected $data;
 
     public function __construct()
@@ -23,7 +26,7 @@ class Phoney
         $body = file_get_contents(__DIR__.'/../resources/sms.json');
         $data = json_decode($body, true);
 
-        $this->data = $data;
+        $this->data = Collection::make($data);
     }
 
     public function carriers()
