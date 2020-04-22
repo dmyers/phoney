@@ -1,6 +1,6 @@
 # Phoney
 
-Free SMS notification channel for Laravel that uses SMS gateways to send messages.
+Free SMS notification channel for Laravel that uses [SMS gateways](https://en.wikipedia.org/wiki/SMS_gateway) to send messages.
 
 ### Features
 
