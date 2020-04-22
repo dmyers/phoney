@@ -82,11 +82,12 @@ class Phoney
      *
      * @param  string  $country
      * @param  string  $carrier
+     * @param  string|null  $region
      * @return Collection
      */
-    public function gateways(string $carrier, string $country)
+    public function gateways(string $carrier, string $country, ?string $region = null)
     {
-        $carriers = $this->carriers($country, null, $carrier);
+        $carriers = $this->carriers($country, $region, $carrier);
         $carrier = $carriers->first();
 
         return [
@@ -100,11 +101,12 @@ class Phoney
      *
      * @param  string  $country
      * @param  string  $carrier
+     * @param  string|null  $region
      * @return Collection
      */
-    public function gateway(string $carrier, string $country)
+    public function gateway(string $carrier, string $country, ?string $region = null)
     {
-        $gateways = $this->gateways($carrier, $country);
+        $gateways = $this->gateways($carrier, $country, $region);
         return array_get($gateways, 'sms');
     }
 }
