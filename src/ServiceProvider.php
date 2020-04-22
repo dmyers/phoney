@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\Phoney;
+namespace Dmyers\Phoney;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\Phoney;
+namespace Dmyers\Phoney;
 
 class PhoneyMessage
 {
