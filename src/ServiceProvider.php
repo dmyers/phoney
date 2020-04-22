@@ -26,13 +26,7 @@ class ServiceProvider extends BaseServiceProvider
         $this->app->when(Channel::class)
             ->needs(Pusher::class)
             ->give(function () {
-                $pusherConfig = config('broadcasting.connections.pusher');
-
-                return new Pusher(
-                    $pusherConfig['key'],
-                    $pusherConfig['secret'],
-                    $pusherConfig['app_id']
-                );
+                return new Pusher;
             });
          */
     }
