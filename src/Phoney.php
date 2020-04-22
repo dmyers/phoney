@@ -11,6 +11,11 @@ class Phoney
         $this->loadFromFile();
     }
 
+    public function loadFromCache()
+    {
+
+    }
+
     public function loadFromFile()
     {
         $body = file_get_contents(__DIR__.'/../resources/sms.json');
