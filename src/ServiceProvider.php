@@ -24,13 +24,7 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function boot()
     {
-        /*
-        $this->app->when(Channel::class)
-            ->needs(Pusher::class)
-            ->give(function () {
-                return new Pusher;
-            });
-         */
+        //
     }
 
     /**
