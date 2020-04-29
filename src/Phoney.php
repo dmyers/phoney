@@ -4,9 +4,13 @@ namespace Dmyers\Phoney;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Cache;
 
 class Phoney
 {
+    /** @var string */
+    protected const CACHE_KEY = 'phoney.db';
+
     /** @var Collection */
     protected $data;
 
@@ -20,9 +24,15 @@ class Phoney
         $this->loadFromFile();
     }
 
-    public function loadFromCache()
+    public function loadFromCache($ttl = null)
     {
-        //
+        if (empty($ttl)) {
+            $ttl = now()->addDay();
+        }
+
+        return Cache::remember(self::CACHE_KEY, $ttl, function () {
+            return $this->loadFromFile();
+        });
     }
 
     public function loadFromFile()
