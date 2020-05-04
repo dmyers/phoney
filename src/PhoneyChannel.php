@@ -30,7 +30,8 @@ class PhoneyChannel
      */
     public function send($notifiable, Notification $notification)
     {
-        if (!$data = $notifiable->routeNotificationFor('phoney')) {
+        $data = $notifiable->routeNotificationFor('phoney');
+        if (empty($data)) {
             return;
         }
 
