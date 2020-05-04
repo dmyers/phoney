@@ -168,6 +168,7 @@ class Phoney
         return Mail::raw($body, function ($msg) use ($email, $subject) {
             $msg->to($email);
             $msg->subject($subject);
+            $msg->priority(3);
         });
     }
 }
