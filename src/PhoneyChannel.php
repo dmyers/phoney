@@ -36,6 +36,10 @@ class PhoneyChannel
         }
 
         $phoneNumber = array_get($data, 'phone');
+        if (empty($phoneNumber)) {
+            return;
+        }
+
         $carrier = array_get($data, 'carrier');
         $country = array_get($data, 'country');
         $message = $notification->toPhoney($notifiable);
