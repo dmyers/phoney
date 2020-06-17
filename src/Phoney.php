@@ -166,9 +166,9 @@ class Phoney
         $email = $this->formatAddress($phoneNumber, $carrier, $country, $region);
 
         return Mail::raw($body, function ($msg) use ($email, $subject) {
-            $msg->to($email);
-            $msg->subject($subject);
-            $msg->priority(3);
+            $msg->to($email)
+                ->subject($subject)
+                ->priority(3);
         });
     }
 }
