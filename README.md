@@ -72,10 +72,5 @@ public function toPhoney($notifiable)
 use Dmyers\Phoney\Phoney;
 
 $phoney = app(Phoney::class);
-$phoneNumber = '15551234567';
-$carrier = 't-mobile';
-$country = 'United States';
-$subject = 'SMS';
-$body = 'Hello World!';
-$phoney->sendMessage($phoneNumber, $subject, $body, $carrier, $country);
+$phoney->sendMessage('15551234567', 'SMS', 'Hello World!', 't-mobile', 'United States');
 ```
