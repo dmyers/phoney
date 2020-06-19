@@ -50,6 +50,8 @@ public function via($notifiable)
 #### Sending messages directly:
 
 ```php
+use Dmyers\Phoney\Phoney;
+
 $phoney = app(Phoney::class);
 $phoneNumber = '15551234567';
 $carrier = 't-mobile';
