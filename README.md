@@ -8,7 +8,7 @@ Free SMS messaging for Laravel that uses [SMS gateways](https://en.wikipedia.org
 
 ### Install
 
-```
+```sh
 $ composer require dmyers/phoney
 ```
 
