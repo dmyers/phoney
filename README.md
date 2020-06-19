@@ -40,9 +40,9 @@ public function via($notifiable)
 public function toPhoney($notifiable)
 {
     $subject = 'SMS';
-    $message = 'Hello World!';
+    $body = 'Hello World!';
 
-    return PhoneyMessage::create($subject, $message);
+    return PhoneyMessage::create($subject, $body);
 }
 ```
 
