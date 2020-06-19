@@ -15,6 +15,8 @@ $ composer require dmyers/phoney
 #### Add the channel to your notification
 
 ```php
+use Dmyers\Phoney\PhoneyChannel;
+
 /**
  * Get the phoney representation of the notification.
  *
@@ -27,6 +29,19 @@ public function toPhoney($notifiable)
     $message = 'Your message body';
 
     return PhoneyMessage::create($subject, $message);
+}
+
+/**
+ * Get the notification's delivery channels.
+ *
+ * @param  mixed  $notifiable
+ * @return array
+ */
+public function via($notifiable)
+{
+    return [
+        PhoneyChannel::class;
+    ];
 }
 ```
 
