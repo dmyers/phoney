@@ -12,6 +12,25 @@ Free SMS messaging for Laravel that uses [SMS gateways](https://en.wikipedia.org
 $ composer require dmyers/phoney
 ```
 
+#### Add the route to your notifiable model
+
+```php
+/**
+ * Route notifications for the Phoney channel.
+ *
+ * @param  \Illuminate\Notifications\Notification  $notification
+ * @return array
+ */
+public function routeNotificationForPhoney($notification)
+{
+    return [
+        'phone'   => '15551234567',
+        'carrier' => 't-mobile',
+        'country' => 'United States',
+    ];
+}
+```
+
 #### Add the channel to your notification
 
 ```php
