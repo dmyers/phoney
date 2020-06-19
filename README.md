@@ -27,7 +27,7 @@ use Dmyers\Phoney\PhoneyMessage;
 public function via($notifiable)
 {
     return [
-        PhoneyChannel::class;
+        PhoneyChannel::class,
     ];
 }
 
