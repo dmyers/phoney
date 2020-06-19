@@ -18,6 +18,19 @@ $ composer require dmyers/phoney
 use Dmyers\Phoney\PhoneyChannel;
 
 /**
+ * Get the notification's delivery channels.
+ *
+ * @param  mixed  $notifiable
+ * @return array
+ */
+public function via($notifiable)
+{
+    return [
+        PhoneyChannel::class;
+    ];
+}
+
+/**
  * Get the phoney representation of the notification.
  *
  * @param  mixed  $notifiable
@@ -29,19 +42,6 @@ public function toPhoney($notifiable)
     $message = 'Your message body';
 
     return PhoneyMessage::create($subject, $message);
-}
-
-/**
- * Get the notification's delivery channels.
- *
- * @param  mixed  $notifiable
- * @return array
- */
-public function via($notifiable)
-{
-    return [
-        PhoneyChannel::class;
-    ];
 }
 ```
 
