@@ -48,7 +48,7 @@ public function toPhoney($notifiable)
 
 ### Usage
 
-#### Sending messages directly:
+#### Sending messages directly
 
 ```php
 use Dmyers\Phoney\Phoney;
