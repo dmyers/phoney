@@ -49,8 +49,8 @@ class ServiceProvider extends BaseServiceProvider
     public function provides()
     {
         return [
-            'phoney',
             Phoney::class,
+            'phoney',
         ];
     }
 }
