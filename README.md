@@ -40,7 +40,7 @@ public function via($notifiable)
 public function toPhoney($notifiable)
 {
     $subject = 'SMS';
-    $message = 'Your message body';
+    $message = 'Hello World!';
 
     return PhoneyMessage::create($subject, $message);
 }
@@ -58,6 +58,6 @@ $phoneNumber = '15551234567';
 $carrier = 't-mobile';
 $country = 'United States';
 $subject = 'SMS';
-$body = 'Your message body.';
+$body = 'Hello World!';
 $phoney->sendMessage($phoneNumber, $subject, $body, $carrier, $country);
 ```
