@@ -41,7 +41,6 @@ public function toPhoney($notifiable)
 {
     $subject = 'SMS';
     $body = 'Hello World!';
-
     return PhoneyMessage::create($subject, $body);
 }
 ```
