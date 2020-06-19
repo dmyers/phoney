@@ -16,6 +16,7 @@ $ composer require dmyers/phoney
 
 ```php
 use Dmyers\Phoney\PhoneyChannel;
+use Dmyers\Phoney\PhoneyMessage;
 
 /**
  * Get the notification's delivery channels.
