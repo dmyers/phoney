@@ -51,6 +51,7 @@ class Phoney
      * @param  string|null  $country
      * @param  string|null  $region
      * @param  string|null  $name
+     * @param  string|null  $slug
      * @return Collection
      */
     public function carriers(?string $country = null, ?string $region = null, ?string $name = null, ?string $slug = null)
