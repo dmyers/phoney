@@ -14,6 +14,8 @@ $ composer require dmyers/phoney
 
 ### Usage
 
+#### Sending messages directly:
+
 ```php
 $phoney = app(Phoney::class);
 $phoneNumber = '15551234567';
