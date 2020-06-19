@@ -46,7 +46,7 @@ class Phoney
     }
 
     /**
-     * Get the list of carriers.
+     * Get the list of phone carriers.
      *
      * @param  string|null  $country
      * @param  string|null  $region
