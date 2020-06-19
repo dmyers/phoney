@@ -74,3 +74,12 @@ use Dmyers\Phoney\Phoney;
 $phoney = app(Phoney::class);
 $phoney->sendMessage('15551234567', 'SMS', 'Hello World!', 't-mobile', 'United States');
 ```
+
+#### Get a list of supported phone carriers
+
+```php
+use Dmyers\Phoney\Phoney;
+
+$phoney = app(Phoney::class);
+$phoney->carriers('United States');
+```
