@@ -12,6 +12,24 @@ Free SMS messaging for Laravel that uses [SMS gateways](https://en.wikipedia.org
 $ composer require dmyers/phoney
 ```
 
+#### Add the channel to your notification
+
+```php
+/**
+ * Get the phoney representation of the notification.
+ *
+ * @param  mixed  $notifiable
+ * @return \Dmyers\Phoney\PhoneyMessage
+ */
+public function toPhoney($notifiable)
+{
+    $subject = 'SMS';
+    $message = 'Your message body';
+
+    return PhoneyMessage::create($subject, $message);
+}
+```
+
 ### Usage
 
 #### Sending messages directly:
