@@ -174,7 +174,9 @@ class Phoney
                 ->subject($subject)
                 ->priority(3);
 
-            $callback($msg);
+            if (!empty($callback)) {
+                $callback($msg);
+            }
         });
     }
 
