@@ -2,7 +2,9 @@
 
 namespace Dmyers\Phoney;
 
-class Mailable
+use Illuminate\Mail\Mailable as BaseMailable;
+
+class Mailable extends BaseMailable
 {
     //
 }
