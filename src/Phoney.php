@@ -169,13 +169,13 @@ class Phoney
         $email = $this->formatAddress($phoneNumber, $carrier, $country, $region);
         $callback = static::$mailCallback;
 
-        return Mail::raw($body, function ($msg) use ($email, $subject, $callback) {
+        return Mail::raw($body, function ($msg) use ($phoneNumber, $email, $subject, $callback) {
             $msg->to($email)
                 ->subject($subject)
                 ->priority(3);
 
             if (!empty($callback)) {
-                $callback($msg);
+                $callback($msg, $phoneNumber);
             }
         });
     }
