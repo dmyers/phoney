@@ -14,6 +14,8 @@ class Phoney
     /** @var Collection */
     protected $data;
 
+    public static $mailCallback;
+
     public function __construct()
     {
         $this->loadData();
@@ -165,11 +167,25 @@ class Phoney
     public function sendMessage(string $phoneNumber, string $subject, string $body, string $carrier, string $country, ?string $region = null)
     {
         $email = $this->formatAddress($phoneNumber, $carrier, $country, $region);
+        $callback = static::$mailCallback;
 
-        return Mail::raw($body, function ($msg) use ($email, $subject) {
+        return Mail::raw($body, function ($msg) use ($email, $subject, $callback) {
             $msg->to($email)
                 ->subject($subject)
                 ->priority(3);
+
+            $callback($msg);
         });
+    }
+
+    /**
+     * Register a callback to be called while sending mail.
+     *
+     * @param  callable  $callback
+     * @return void
+     */
+    public static function buildMailUsing(callable $callback)
+    {
+        static::$mailCallback = $callback;
     }
 }
