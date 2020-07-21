@@ -132,9 +132,14 @@ class Phoney
     {
         $gateways = $this->gateways($carrier, $country, $region);
         $sms = array_get($gateways, 'sms');
-        if (!empty($sms)) return $sms;
+        if (!empty($sms)) {
+            return $sms;
+        }
         $mms = array_get($gateways, 'mms');
-        if (!empty($mms)) return $mms;
+        if (!empty($mms)) {
+            return $mms;
+        }
+
         return null;
     }
 
