@@ -34,8 +34,7 @@ public function routeNotificationForPhoney($notification)
 #### Add the channel to your notification
 
 ```php
-use Dmyers\Phoney\PhoneyChannel;
-use Dmyers\Phoney\PhoneyMessage;
+use Dmyers\Phoney\{PhoneyChannel, PhoneyMessage};
 
 /**
  * Get the notification's delivery channels.
