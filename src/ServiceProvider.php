@@ -5,7 +5,6 @@ namespace Dmyers\Phoney;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 /**
- * @see https://en.wikipedia.org/wiki/SMS_gateway
  * @see https://github.com/mfitzp/List_of_SMS_gateways
  * @see https://github.com/brendanlim/sms-fu
  * @see https://github.com/preston/sms-easy
