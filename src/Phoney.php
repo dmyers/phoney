@@ -29,7 +29,7 @@ class Phoney
     public function loadFromCache($ttl = null)
     {
         if (empty($ttl)) {
-            $ttl = now()->addDay();
+            $ttl = now()->addDays(30);
         }
 
         return Cache::remember(self::CACHE_KEY, $ttl, function () {
