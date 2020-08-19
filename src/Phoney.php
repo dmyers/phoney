@@ -40,7 +40,7 @@ class Phoney
     public function loadFromFile()
     {
         if (!is_null($this->data)) {
-            return;
+            return $this->data;
         }
 
         $body = file_get_contents(__DIR__.'/../resources/sms.json');
