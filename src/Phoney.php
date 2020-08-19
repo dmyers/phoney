@@ -23,7 +23,8 @@ class Phoney
 
     public function loadData()
     {
-        $this->loadFromCache();
+        $data = $this->loadFromCache();
+        $this->data = $data;
     }
 
     public function loadFromCache($ttl = null)
