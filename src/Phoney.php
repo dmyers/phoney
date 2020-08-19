@@ -46,9 +46,7 @@ class Phoney
 
         $body = file_get_contents(__DIR__.'/../resources/sms.json');
         $data = json_decode($body, true);
-
-        $this->data = Collection::make($data);
-        return $this->data;
+        return Collection::make($data);
     }
 
     /**
