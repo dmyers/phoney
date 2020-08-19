@@ -23,6 +23,10 @@ class Phoney
 
     public function loadData()
     {
+        if (!is_null($this->data)) {
+            return $this->data;
+        }
+
         $data = $this->loadFromCache();
         $this->data = $data;
     }
@@ -40,10 +44,6 @@ class Phoney
 
     public function loadFromFile()
     {
-        // if (!is_null($this->data)) {
-        //     return $this->data;
-        // }
-
         $body = file_get_contents(__DIR__.'/../resources/sms.json');
         $data = json_decode($body, true);
         return Collection::make($data);
