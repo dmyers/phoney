@@ -47,6 +47,7 @@ class Phoney
         $data = json_decode($body, true);
 
         $this->data = Collection::make($data);
+        return $this->data;
     }
 
     /**
