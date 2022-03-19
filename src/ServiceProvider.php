@@ -13,6 +13,7 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
  * @see https://github.com/typpo/textbelt/blob/master/lib/providers.js
  * @see https://github.com/laravel-notification-channels/twilio/tree/master/src
  * @see https://github.com/amnah/ksms
+ * @see https://github.com/4lch4/Email-To-Text/blob/main/data.json
  */
 class ServiceProvider extends BaseServiceProvider
 {
