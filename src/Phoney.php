@@ -53,10 +53,6 @@ class Phoney
     /**
      * Get the list of phone carriers.
      *
-     * @param  string|null  $country
-     * @param  string|null  $region
-     * @param  string|null  $name
-     * @param  string|null  $slug
      * @return Collection
      */
     public function carriers(?string $country = null, ?string $region = null, ?string $name = null, ?string $slug = null)
@@ -93,8 +89,6 @@ class Phoney
     /**
      * Get the list of carriers.
      *
-     * @param  string|null  $country
-     * @param  string|null  $region
      * @return Collection
      */
     public function carrierNames(?string $country = null, ?string $region = null)
@@ -105,9 +99,6 @@ class Phoney
     /**
      * Get the gateways for a carrier.
      *
-     * @param  string  $country
-     * @param  string  $carrier
-     * @param  string|null  $region
      * @return Collection
      */
     public function gateways(string $carrier, string $country, ?string $region = null)
@@ -124,9 +115,6 @@ class Phoney
     /**
      * Get the text gateway for a carrier.
      *
-     * @param  string  $country
-     * @param  string  $carrier
-     * @param  string|null  $region
      * @return Collection
      */
     public function gateway(string $carrier, string $country, ?string $region = null)
@@ -148,10 +136,6 @@ class Phoney
      * Formats a phone number to be used with
      * the text gateway for a carrier.
      *
-     * @param  string  $phoneNumber
-     * @param  string  $country
-     * @param  string  $carrier
-     * @param  string|null  $region
      * @return Collection
      */
     public function formatAddress(string $phoneNumber, string $carrier, string $country, ?string $region = null)
@@ -164,12 +148,6 @@ class Phoney
      * Sends a message to a phone number using
      * the gateway for a carrier.
      *
-     * @param  string  $phoneNumber
-     * @param  string  $subject
-     * @param  string  $body
-     * @param  string  $country
-     * @param  string  $carrier
-     * @param  string|null  $region
      * @return mixed
      */
     public function sendMessage(string $phoneNumber, string $subject, string $body, string $carrier, string $country, ?string $region = null)
@@ -191,7 +169,6 @@ class Phoney
     /**
      * Register a callback to be called while sending mail.
      *
-     * @param  callable  $callback
      * @return void
      */
     public static function buildMailUsing(callable $callback)
