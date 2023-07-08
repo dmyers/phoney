@@ -9,14 +9,8 @@ use Illuminate\Notifications\Notification;
 
 class PhoneyChannel
 {
-    /**
-     * @var \Dmyers\Phoney\Phoney
-     */
-    protected $phoney;
+    protected Phoney $phoney;
 
-    /**
-     * @param \Dmyers\Phoney\Phoney $phoney
-     */
     public function __construct(Phoney $phoney)
     {
         $this->phoney = $phoney;
