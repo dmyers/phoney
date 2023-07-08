@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Dmyers\Phoney;
 
 class PhoneyMessage
@@ -29,8 +31,8 @@ class PhoneyMessage
     }
 
     /**
-     * @param string $subject
-     * @param string $body
+     * @param  string  $subject
+     * @param  string  $body
      */
     public function __construct($subject = '', $body = '')
     {
