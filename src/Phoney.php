@@ -5,8 +5,7 @@ declare(strict_types=1);
 namespace Dmyers\Phoney;
 
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\{Cache, Mail};
 
 class Phoney
 {
