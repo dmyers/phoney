@@ -20,9 +20,9 @@ class PhoneyChannel
      * Send the given notification.
      *
      * @param  mixed  $notifiable
-     * @param  \Illuminate\Notifications\Notification  $notification
      * @return array
-     * @throws \Exception
+     *
+     * @throws Exception
      */
     public function send($notifiable, Notification $notification)
     {
