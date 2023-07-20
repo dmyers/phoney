@@ -1,5 +1,6 @@
 {
     "name": "dmyers/phoney",
+    "version": "0.1.0",
     "description": "Free SMS notification channel for Laravel.",
     "keywords": ["laravel", "notifications", "sms gateway", "email2sms", "email to sms", "send free sms", "send sms"],
     "license": "MIT",
