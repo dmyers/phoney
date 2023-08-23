@@ -168,10 +168,8 @@ class Phoney
 
     /**
      * Register a callback to be called while sending mail.
-     *
-     * @return void
      */
-    public static function buildMailUsing(callable $callback)
+    public static function buildMailUsing(callable $callback): void
     {
         static::$mailCallback = $callback;
     }
