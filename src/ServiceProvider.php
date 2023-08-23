@@ -36,9 +36,7 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(Phoney::class, function () {
-            return new Phoney;
-        });
+        $this->app->singleton(Phoney::class, fn () => new Phoney);
 
         $this->app->alias(Phoney::class, 'phoney');
     }
